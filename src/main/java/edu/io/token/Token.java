@@ -1,7 +1,7 @@
-package edu.io;
+package edu.io.token;
 
-public class Token {
-    public final String label;
+public abstract class Token {
+    private final String label;
 
     public Token(String label) {
         this.label = label;

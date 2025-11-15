@@ -1,43 +1,52 @@
 package edu.io;
 
+import edu.io.token.EmptyToken;
+import edu.io.token.Token;
+import edu.io.token.EmptyToken;
+import edu.io.token.Label;
+
 public class Board {
-    public final int size;
-    // na razie jest stały rozmiar planszy - 10x10
-    private static final int DEFAULT_SIZE = 10;
+
     private final Token[][] grid;
+    private static final int DEFAULT_SIZE = 10;
+
+    public final int size;
+
+    public record Coords(int col, int row) {}
 
     public Board() {
-        this.size = DEFAULT_SIZE;
+        this.size = DEFAULT_SIZE; // Inicjalizacja publicznego pola size
         this.grid = new Token[this.size][this.size];
+
         clean();
     }
 
     public int size() {
-        return DEFAULT_SIZE;
+        return this.size;
     }
 
     public void placeToken(int col, int row, Token t) {
         this.grid[col][row] = t;
     }
 
-    public Token square(int row, int col) {
-        return this.grid[row][col];
+    public Token peekToken(int col, int row) {
+        return this.grid[col][row];
     }
 
     public void clean() {
-        for (int r = 0; r < DEFAULT_SIZE; r++) {
-            for (int c = 0; c < DEFAULT_SIZE; c++) {
-                // wypełnienie wszystkich pól empty_token_label
-                this.grid[r][c] = new EmptyToken();
+        for (int c = 0; c < this.size; c++) {
+            for (int r = 0; r < this.size; r++) {
+                this.grid[c][r] = new EmptyToken();
             }
         }
     }
 
+
     public void display() {
-        System.out.println("{ Wyświetlanie planszy: Board (Rozmiar: " + DEFAULT_SIZE + "x" + DEFAULT_SIZE + ") }");
-        for (int r = 0; r < DEFAULT_SIZE; r++) {
-            for (int c = 0; c < DEFAULT_SIZE; c++) {
-                System.out.print("[" + grid[r][c].label() + "]");
+        System.out.println("{ Wyświetlanie planszy: (Rozmiar: " + DEFAULT_SIZE + "x" + DEFAULT_SIZE + ") }");
+        for (int c = 0; c < DEFAULT_SIZE; c++) {
+            for (int r = 0; r < DEFAULT_SIZE; r++) {
+                System.out.print("[" + grid[c][r].label() + "]");
             }
             System.out.println();
         }

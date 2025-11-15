@@ -1,4 +1,4 @@
-package edu.io;
+package edu.io.token;
 
 public class Label {
     public static final String EMPTY_TOKEN_LABEL = "・";
