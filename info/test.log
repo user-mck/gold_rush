@@ -1,0 +1,863 @@
+2025.11.16 00:04:39
+
+> Task :clean
+> Task :compileJava
+> Task :processResources NO-SOURCE
+> Task :classes
+
+> Task :compileTestJava FAILED
+
+[Incubating] Problems report is available at: file:///home/olek/Projekty/zajecia/io/gold_rush_test_students/build/reports/problems/problems-report.html
+3 actionable tasks: 3 executed/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:1: error: cannot find symbol
+import edu.io.Board;
+             ^
+  symbol:   class Board
+  location: package edu.io
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:2: error: package edu.io.token does not exist
+import edu.io.token.GoldToken;
+                   ^
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:3: error: package edu.io.token does not exist
+import edu.io.token.Label;
+                   ^
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:4: error: package edu.io.token does not exist
+import edu.io.token.PlayerToken;
+                   ^
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:5: error: package edu.io.token does not exist
+import edu.io.token.Token;
+                   ^
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:11: error: cannot find symbol
+    Board board;
+    ^
+  symbol:   class Board
+  location: class BoardTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:1: error: cannot find symbol
+import edu.io.Board;
+             ^
+  symbol:   class Board
+  location: package edu.io
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:2: error: package edu.io.token does not exist
+import edu.io.token.*;
+^
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:1: error: cannot find symbol
+import edu.io.Board;
+             ^
+  symbol:   class Board
+  location: package edu.io
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:2: error: package edu.io.token does not exist
+import edu.io.token.EmptyToken;
+                   ^
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:3: error: package edu.io.token does not exist
+import edu.io.token.PlayerToken;
+                   ^
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:9: error: cannot find symbol
+    Board board;
+    ^
+  symbol:   class Board
+  location: class PlayerTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:10: error: cannot find symbol
+    PlayerToken token;
+    ^
+  symbol:   class PlayerToken
+  location: class PlayerTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:15: error: cannot find symbol
+        board = new Board();
+                    ^
+  symbol:   class Board
+  location: class BoardTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:25: error: cannot find symbol
+        Token t = new PlayerToken(board);
+        ^
+  symbol:   class Token
+  location: class BoardTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:25: error: cannot find symbol
+        Token t = new PlayerToken(board);
+                      ^
+  symbol:   class PlayerToken
+  location: class BoardTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:32: error: cannot find symbol
+        board.placeToken(1, 2, new GoldToken());
+                                   ^
+  symbol:   class GoldToken
+  location: class BoardTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:34: error: cannot find symbol
+                new GoldToken());
+                    ^
+  symbol:   class GoldToken
+  location: class BoardTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:41: error: cannot find symbol
+        Assertions.assertDoesNotThrow(() -> Board.class.getMethod("display"));
+                                            ^
+  symbol:   class Board
+  location: class BoardTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:50: error: cannot find symbol
+                        .equals(Label.EMPTY_TOKEN_LABEL)) {
+                                ^
+  symbol:   variable Label
+  location: class BoardTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:10: error: cannot find symbol
+        Token token = new EmptyToken();
+        ^
+  symbol:   class Token
+  location: class TokenTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:10: error: cannot find symbol
+        Token token = new EmptyToken();
+                          ^
+  symbol:   class EmptyToken
+  location: class TokenTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:11: error: cannot find symbol
+        Assertions.assertEquals(Label.EMPTY_TOKEN_LABEL, token.label());
+                                ^
+  symbol:   variable Label
+  location: class TokenTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:16: error: cannot find symbol
+        Assertions.assertEquals(1, Token.class.getConstructors().length);
+                                   ^
+  symbol:   class Token
+  location: class TokenTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:22: error: cannot find symbol
+                Label.EMPTY_TOKEN_LABEL,
+                ^
+  symbol:   variable Label
+  location: class TokenTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:23: error: cannot find symbol
+                new EmptyToken().label());
+                    ^
+  symbol:   class EmptyToken
+  location: class TokenTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:29: error: cannot find symbol
+                Label.GOLD_TOKEN_LABEL,
+                ^
+  symbol:   variable Label
+  location: class TokenTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:30: error: cannot find symbol
+                new GoldToken().label());
+                    ^
+  symbol:   class GoldToken
+  location: class TokenTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:36: error: cannot find symbol
+                Label.PLAYER_TOKEN_LABEL,
+                ^
+  symbol:   variable Label
+  location: class TokenTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:37: error: cannot find symbol
+                new PlayerToken(new Board()).label());
+                    ^
+  symbol:   class PlayerToken
+  location: class TokenTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:37: error: cannot find symbol
+                new PlayerToken(new Board()).label());
+                                    ^
+  symbol:   class Board
+  location: class TokenTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:42: error: cannot find symbol
+        Assertions.assertTrue(Modifier.isAbstract(Token.class.getModifiers()));
+                                                  ^
+  symbol:   class Token
+  location: class TokenTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:14: error: cannot find symbol
+        board = new Board();
+                    ^
+  symbol:   class Board
+  location: class PlayerTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:15: error: cannot find symbol
+        token = new PlayerToken(board);
+                    ^
+  symbol:   class PlayerToken
+  location: class PlayerTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:20: error: package Board does not exist
+        Board.Coords pos = token.pos();
+             ^
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:27: error: package PlayerToken does not exist
+            while (true) token.move(PlayerToken.Move.LEFT);
+                                               ^
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:29: error: package Board does not exist
+        Board.Coords pos = token.pos();
+             ^
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:35: error: package PlayerToken does not exist
+            while (true) token.move(PlayerToken.Move.RIGHT);
+                                               ^
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:37: error: package Board does not exist
+        Board.Coords pos = token.pos();
+             ^
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:43: error: package PlayerToken does not exist
+            while (true) token.move(PlayerToken.Move.UP);
+                                               ^
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:45: error: package Board does not exist
+        Board.Coords pos = token.pos();
+             ^
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:51: error: package PlayerToken does not exist
+            while (true) token.move(PlayerToken.Move.DOWN);
+                                               ^
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:53: error: package Board does not exist
+        Board.Coords pos = token.pos();
+             ^
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:59: error: package Board does not exist
+        Board.Coords pos = token.pos();
+             ^
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:60: error: package PlayerToken does not exist
+        token.move(PlayerToken.Move.DOWN);
+                              ^
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:68: error: package Board does not exist
+        Board.Coords pos = token.pos();
+             ^
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:69: error: package PlayerToken does not exist
+        token.move(PlayerToken.Move.RIGHT);
+                              ^
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:71: error: cannot find symbol
+                EmptyToken.class,
+                ^
+  symbol:   class EmptyToken
+  location: class PlayerTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:77: error: package Board does not exist
+        Board.Coords pos = token.pos();
+             ^
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:78: error: package PlayerToken does not exist
+        token.move(PlayerToken.Move.NONE);
+                              ^
+50 errors
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':compileTestJava'.
+> Compilation failed; see the compiler output below.
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:1: error: cannot find symbol
+  import edu.io.Board;
+               ^
+    symbol:   class Board
+    location: package edu.io
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:11: error: cannot find symbol
+      Board board;
+      ^
+    symbol:   class Board
+    location: class BoardTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:1: error: cannot find symbol
+  import edu.io.Board;
+               ^
+    symbol:   class Board
+    location: package edu.io
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:1: error: cannot find symbol
+  import edu.io.Board;
+               ^
+    symbol:   class Board
+    location: package edu.io
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:9: error: cannot find symbol
+      Board board;
+      ^
+    symbol:   class Board
+    location: class PlayerTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:10: error: cannot find symbol
+      PlayerToken token;
+      ^
+    symbol:   class PlayerToken
+    location: class PlayerTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:15: error: cannot find symbol
+          board = new Board();
+                      ^
+    symbol:   class Board
+    location: class BoardTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:25: error: cannot find symbol
+          Token t = new PlayerToken(board);
+          ^
+    symbol:   class Token
+    location: class BoardTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:25: error: cannot find symbol
+          Token t = new PlayerToken(board);
+                        ^
+    symbol:   class PlayerToken
+    location: class BoardTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:32: error: cannot find symbol
+          board.placeToken(1, 2, new GoldToken());
+                                     ^
+    symbol:   class GoldToken
+    location: class BoardTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:34: error: cannot find symbol
+                  new GoldToken());
+                      ^
+    symbol:   class GoldToken
+    location: class BoardTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:41: error: cannot find symbol
+          Assertions.assertDoesNotThrow(() -> Board.class.getMethod("display"));
+                                              ^
+    symbol:   class Board
+    location: class BoardTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:50: error: cannot find symbol
+                          .equals(Label.EMPTY_TOKEN_LABEL)) {
+                                  ^
+    symbol:   variable Label
+    location: class BoardTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:10: error: cannot find symbol
+          Token token = new EmptyToken();
+          ^
+    symbol:   class Token
+    location: class TokenTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:10: error: cannot find symbol
+          Token token = new EmptyToken();
+                            ^
+    symbol:   class EmptyToken
+    location: class TokenTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:11: error: cannot find symbol
+          Assertions.assertEquals(Label.EMPTY_TOKEN_LABEL, token.label());
+                                  ^
+    symbol:   variable Label
+    location: class TokenTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:16: error: cannot find symbol
+          Assertions.assertEquals(1, Token.class.getConstructors().length);
+                                     ^
+    symbol:   class Token
+    location: class TokenTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:22: error: cannot find symbol
+                  Label.EMPTY_TOKEN_LABEL,
+                  ^
+    symbol:   variable Label
+    location: class TokenTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:23: error: cannot find symbol
+                  new EmptyToken().label());
+                      ^
+    symbol:   class EmptyToken
+    location: class TokenTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:29: error: cannot find symbol
+                  Label.GOLD_TOKEN_LABEL,
+                  ^
+    symbol:   variable Label
+    location: class TokenTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:30: error: cannot find symbol
+                  new GoldToken().label());
+                      ^
+    symbol:   class GoldToken
+    location: class TokenTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:36: error: cannot find symbol
+                  Label.PLAYER_TOKEN_LABEL,
+                  ^
+    symbol:   variable Label
+    location: class TokenTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:37: error: cannot find symbol
+                  new PlayerToken(new Board()).label());
+                      ^
+    symbol:   class PlayerToken
+    location: class TokenTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:37: error: cannot find symbol
+                  new PlayerToken(new Board()).label());
+                                      ^
+    symbol:   class Board
+    location: class TokenTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:42: error: cannot find symbol
+          Assertions.assertTrue(Modifier.isAbstract(Token.class.getModifiers()));
+                                                    ^
+    symbol:   class Token
+    location: class TokenTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:14: error: cannot find symbol
+          board = new Board();
+                      ^
+    symbol:   class Board
+    location: class PlayerTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:15: error: cannot find symbol
+          token = new PlayerToken(board);
+                      ^
+    symbol:   class PlayerToken
+    location: class PlayerTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:71: error: cannot find symbol
+                  EmptyToken.class,
+                  ^
+    symbol:   class EmptyToken
+    location: class PlayerTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:2: error: package edu.io.token does not exist
+  import edu.io.token.GoldToken;
+                     ^
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:3: error: package edu.io.token does not exist
+  import edu.io.token.Label;
+                     ^
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:4: error: package edu.io.token does not exist
+  import edu.io.token.PlayerToken;
+                     ^
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:5: error: package edu.io.token does not exist
+  import edu.io.token.Token;
+                     ^
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:2: error: package edu.io.token does not exist
+  import edu.io.token.*;
+  ^
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:2: error: package edu.io.token does not exist
+  import edu.io.token.EmptyToken;
+                     ^
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:3: error: package edu.io.token does not exist
+  import edu.io.token.PlayerToken;
+                     ^
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:20: error: package Board does not exist
+          Board.Coords pos = token.pos();
+               ^
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:27: error: package PlayerToken does not exist
+              while (true) token.move(PlayerToken.Move.LEFT);
+                                                 ^
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:29: error: package Board does not exist
+          Board.Coords pos = token.pos();
+               ^
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:35: error: package PlayerToken does not exist
+              while (true) token.move(PlayerToken.Move.RIGHT);
+                                                 ^
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:37: error: package Board does not exist
+          Board.Coords pos = token.pos();
+               ^
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:43: error: package PlayerToken does not exist
+              while (true) token.move(PlayerToken.Move.UP);
+                                                 ^
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:45: error: package Board does not exist
+          Board.Coords pos = token.pos();
+               ^
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:51: error: package PlayerToken does not exist
+              while (true) token.move(PlayerToken.Move.DOWN);
+                                                 ^
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:53: error: package Board does not exist
+          Board.Coords pos = token.pos();
+               ^
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:59: error: package Board does not exist
+          Board.Coords pos = token.pos();
+               ^
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:60: error: package PlayerToken does not exist
+          token.move(PlayerToken.Move.DOWN);
+                                ^
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:68: error: package Board does not exist
+          Board.Coords pos = token.pos();
+               ^
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:69: error: package PlayerToken does not exist
+          token.move(PlayerToken.Move.RIGHT);
+                                ^
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:77: error: package Board does not exist
+          Board.Coords pos = token.pos();
+               ^
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:78: error: package PlayerToken does not exist
+          token.move(PlayerToken.Move.NONE);
+                                ^
+  50 errors
+
+* Try:
+> Check your code and dependencies to fix the compilation error(s)
+> Run with --scan to get full insights.
+
+BUILD FAILED in 669ms
+[STDERR]
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:1: error: cannot find symbol
+import edu.io.Board;
+             ^
+  symbol:   class Board
+  location: package edu.io
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:2: error: package edu.io.token does not exist
+import edu.io.token.GoldToken;
+                   ^
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:3: error: package edu.io.token does not exist
+import edu.io.token.Label;
+                   ^
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:4: error: package edu.io.token does not exist
+import edu.io.token.PlayerToken;
+                   ^
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:5: error: package edu.io.token does not exist
+import edu.io.token.Token;
+                   ^
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:11: error: cannot find symbol
+    Board board;
+    ^
+  symbol:   class Board
+  location: class BoardTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:1: error: cannot find symbol
+import edu.io.Board;
+             ^
+  symbol:   class Board
+  location: package edu.io
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:2: error: package edu.io.token does not exist
+import edu.io.token.*;
+^
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:1: error: cannot find symbol
+import edu.io.Board;
+             ^
+  symbol:   class Board
+  location: package edu.io
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:2: error: package edu.io.token does not exist
+import edu.io.token.EmptyToken;
+                   ^
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:3: error: package edu.io.token does not exist
+import edu.io.token.PlayerToken;
+                   ^
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:9: error: cannot find symbol
+    Board board;
+    ^
+  symbol:   class Board
+  location: class PlayerTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:10: error: cannot find symbol
+    PlayerToken token;
+    ^
+  symbol:   class PlayerToken
+  location: class PlayerTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:15: error: cannot find symbol
+        board = new Board();
+                    ^
+  symbol:   class Board
+  location: class BoardTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:25: error: cannot find symbol
+        Token t = new PlayerToken(board);
+        ^
+  symbol:   class Token
+  location: class BoardTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:25: error: cannot find symbol
+        Token t = new PlayerToken(board);
+                      ^
+  symbol:   class PlayerToken
+  location: class BoardTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:32: error: cannot find symbol
+        board.placeToken(1, 2, new GoldToken());
+                                   ^
+  symbol:   class GoldToken
+  location: class BoardTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:34: error: cannot find symbol
+                new GoldToken());
+                    ^
+  symbol:   class GoldToken
+  location: class BoardTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:41: error: cannot find symbol
+        Assertions.assertDoesNotThrow(() -> Board.class.getMethod("display"));
+                                            ^
+  symbol:   class Board
+  location: class BoardTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:50: error: cannot find symbol
+                        .equals(Label.EMPTY_TOKEN_LABEL)) {
+                                ^
+  symbol:   variable Label
+  location: class BoardTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:10: error: cannot find symbol
+        Token token = new EmptyToken();
+        ^
+  symbol:   class Token
+  location: class TokenTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:10: error: cannot find symbol
+        Token token = new EmptyToken();
+                          ^
+  symbol:   class EmptyToken
+  location: class TokenTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:11: error: cannot find symbol
+        Assertions.assertEquals(Label.EMPTY_TOKEN_LABEL, token.label());
+                                ^
+  symbol:   variable Label
+  location: class TokenTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:16: error: cannot find symbol
+        Assertions.assertEquals(1, Token.class.getConstructors().length);
+                                   ^
+  symbol:   class Token
+  location: class TokenTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:22: error: cannot find symbol
+                Label.EMPTY_TOKEN_LABEL,
+                ^
+  symbol:   variable Label
+  location: class TokenTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:23: error: cannot find symbol
+                new EmptyToken().label());
+                    ^
+  symbol:   class EmptyToken
+  location: class TokenTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:29: error: cannot find symbol
+                Label.GOLD_TOKEN_LABEL,
+                ^
+  symbol:   variable Label
+  location: class TokenTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:30: error: cannot find symbol
+                new GoldToken().label());
+                    ^
+  symbol:   class GoldToken
+  location: class TokenTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:36: error: cannot find symbol
+                Label.PLAYER_TOKEN_LABEL,
+                ^
+  symbol:   variable Label
+  location: class TokenTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:37: error: cannot find symbol
+                new PlayerToken(new Board()).label());
+                    ^
+  symbol:   class PlayerToken
+  location: class TokenTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:37: error: cannot find symbol
+                new PlayerToken(new Board()).label());
+                                    ^
+  symbol:   class Board
+  location: class TokenTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:42: error: cannot find symbol
+        Assertions.assertTrue(Modifier.isAbstract(Token.class.getModifiers()));
+                                                  ^
+  symbol:   class Token
+  location: class TokenTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:14: error: cannot find symbol
+        board = new Board();
+                    ^
+  symbol:   class Board
+  location: class PlayerTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:15: error: cannot find symbol
+        token = new PlayerToken(board);
+                    ^
+  symbol:   class PlayerToken
+  location: class PlayerTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:20: error: package Board does not exist
+        Board.Coords pos = token.pos();
+             ^
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:27: error: package PlayerToken does not exist
+            while (true) token.move(PlayerToken.Move.LEFT);
+                                               ^
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:29: error: package Board does not exist
+        Board.Coords pos = token.pos();
+             ^
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:35: error: package PlayerToken does not exist
+            while (true) token.move(PlayerToken.Move.RIGHT);
+                                               ^
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:37: error: package Board does not exist
+        Board.Coords pos = token.pos();
+             ^
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:43: error: package PlayerToken does not exist
+            while (true) token.move(PlayerToken.Move.UP);
+                                               ^
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:45: error: package Board does not exist
+        Board.Coords pos = token.pos();
+             ^
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:51: error: package PlayerToken does not exist
+            while (true) token.move(PlayerToken.Move.DOWN);
+                                               ^
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:53: error: package Board does not exist
+        Board.Coords pos = token.pos();
+             ^
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:59: error: package Board does not exist
+        Board.Coords pos = token.pos();
+             ^
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:60: error: package PlayerToken does not exist
+        token.move(PlayerToken.Move.DOWN);
+                              ^
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:68: error: package Board does not exist
+        Board.Coords pos = token.pos();
+             ^
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:69: error: package PlayerToken does not exist
+        token.move(PlayerToken.Move.RIGHT);
+                              ^
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:71: error: cannot find symbol
+                EmptyToken.class,
+                ^
+  symbol:   class EmptyToken
+  location: class PlayerTest
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:77: error: package Board does not exist
+        Board.Coords pos = token.pos();
+             ^
+/home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:78: error: package PlayerToken does not exist
+        token.move(PlayerToken.Move.NONE);
+                              ^
+50 errors
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':compileTestJava'.
+> Compilation failed; see the compiler output below.
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:1: error: cannot find symbol
+  import edu.io.Board;
+               ^
+    symbol:   class Board
+    location: package edu.io
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:11: error: cannot find symbol
+      Board board;
+      ^
+    symbol:   class Board
+    location: class BoardTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:1: error: cannot find symbol
+  import edu.io.Board;
+               ^
+    symbol:   class Board
+    location: package edu.io
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:1: error: cannot find symbol
+  import edu.io.Board;
+               ^
+    symbol:   class Board
+    location: package edu.io
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:9: error: cannot find symbol
+      Board board;
+      ^
+    symbol:   class Board
+    location: class PlayerTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:10: error: cannot find symbol
+      PlayerToken token;
+      ^
+    symbol:   class PlayerToken
+    location: class PlayerTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:15: error: cannot find symbol
+          board = new Board();
+                      ^
+    symbol:   class Board
+    location: class BoardTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:25: error: cannot find symbol
+          Token t = new PlayerToken(board);
+          ^
+    symbol:   class Token
+    location: class BoardTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:25: error: cannot find symbol
+          Token t = new PlayerToken(board);
+                        ^
+    symbol:   class PlayerToken
+    location: class BoardTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:32: error: cannot find symbol
+          board.placeToken(1, 2, new GoldToken());
+                                     ^
+    symbol:   class GoldToken
+    location: class BoardTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:34: error: cannot find symbol
+                  new GoldToken());
+                      ^
+    symbol:   class GoldToken
+    location: class BoardTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:41: error: cannot find symbol
+          Assertions.assertDoesNotThrow(() -> Board.class.getMethod("display"));
+                                              ^
+    symbol:   class Board
+    location: class BoardTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:50: error: cannot find symbol
+                          .equals(Label.EMPTY_TOKEN_LABEL)) {
+                                  ^
+    symbol:   variable Label
+    location: class BoardTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:10: error: cannot find symbol
+          Token token = new EmptyToken();
+          ^
+    symbol:   class Token
+    location: class TokenTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:10: error: cannot find symbol
+          Token token = new EmptyToken();
+                            ^
+    symbol:   class EmptyToken
+    location: class TokenTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:11: error: cannot find symbol
+          Assertions.assertEquals(Label.EMPTY_TOKEN_LABEL, token.label());
+                                  ^
+    symbol:   variable Label
+    location: class TokenTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:16: error: cannot find symbol
+          Assertions.assertEquals(1, Token.class.getConstructors().length);
+                                     ^
+    symbol:   class Token
+    location: class TokenTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:22: error: cannot find symbol
+                  Label.EMPTY_TOKEN_LABEL,
+                  ^
+    symbol:   variable Label
+    location: class TokenTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:23: error: cannot find symbol
+                  new EmptyToken().label());
+                      ^
+    symbol:   class EmptyToken
+    location: class TokenTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:29: error: cannot find symbol
+                  Label.GOLD_TOKEN_LABEL,
+                  ^
+    symbol:   variable Label
+    location: class TokenTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:30: error: cannot find symbol
+                  new GoldToken().label());
+                      ^
+    symbol:   class GoldToken
+    location: class TokenTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:36: error: cannot find symbol
+                  Label.PLAYER_TOKEN_LABEL,
+                  ^
+    symbol:   variable Label
+    location: class TokenTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:37: error: cannot find symbol
+                  new PlayerToken(new Board()).label());
+                      ^
+    symbol:   class PlayerToken
+    location: class TokenTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:37: error: cannot find symbol
+                  new PlayerToken(new Board()).label());
+                                      ^
+    symbol:   class Board
+    location: class TokenTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:42: error: cannot find symbol
+          Assertions.assertTrue(Modifier.isAbstract(Token.class.getModifiers()));
+                                                    ^
+    symbol:   class Token
+    location: class TokenTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:14: error: cannot find symbol
+          board = new Board();
+                      ^
+    symbol:   class Board
+    location: class PlayerTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:15: error: cannot find symbol
+          token = new PlayerToken(board);
+                      ^
+    symbol:   class PlayerToken
+    location: class PlayerTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:71: error: cannot find symbol
+                  EmptyToken.class,
+                  ^
+    symbol:   class EmptyToken
+    location: class PlayerTest
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:2: error: package edu.io.token does not exist
+  import edu.io.token.GoldToken;
+                     ^
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:3: error: package edu.io.token does not exist
+  import edu.io.token.Label;
+                     ^
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:4: error: package edu.io.token does not exist
+  import edu.io.token.PlayerToken;
+                     ^
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/BoardTest.java:5: error: package edu.io.token does not exist
+  import edu.io.token.Token;
+                     ^
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/TokenTest.java:2: error: package edu.io.token does not exist
+  import edu.io.token.*;
+  ^
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:2: error: package edu.io.token does not exist
+  import edu.io.token.EmptyToken;
+                     ^
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:3: error: package edu.io.token does not exist
+  import edu.io.token.PlayerToken;
+                     ^
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:20: error: package Board does not exist
+          Board.Coords pos = token.pos();
+               ^
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:27: error: package PlayerToken does not exist
+              while (true) token.move(PlayerToken.Move.LEFT);
+                                                 ^
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:29: error: package Board does not exist
+          Board.Coords pos = token.pos();
+               ^
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:35: error: package PlayerToken does not exist
+              while (true) token.move(PlayerToken.Move.RIGHT);
+                                                 ^
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:37: error: package Board does not exist
+          Board.Coords pos = token.pos();
+               ^
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:43: error: package PlayerToken does not exist
+              while (true) token.move(PlayerToken.Move.UP);
+                                                 ^
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:45: error: package Board does not exist
+          Board.Coords pos = token.pos();
+               ^
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:51: error: package PlayerToken does not exist
+              while (true) token.move(PlayerToken.Move.DOWN);
+                                                 ^
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:53: error: package Board does not exist
+          Board.Coords pos = token.pos();
+               ^
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:59: error: package Board does not exist
+          Board.Coords pos = token.pos();
+               ^
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:60: error: package PlayerToken does not exist
+          token.move(PlayerToken.Move.DOWN);
+                                ^
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:68: error: package Board does not exist
+          Board.Coords pos = token.pos();
+               ^
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:69: error: package PlayerToken does not exist
+          token.move(PlayerToken.Move.RIGHT);
+                                ^
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:77: error: package Board does not exist
+          Board.Coords pos = token.pos();
+               ^
+  /home/olek/Projekty/zajecia/io/gold_rush_test_students/src/test/java/PlayerTest.java:78: error: package PlayerToken does not exist
+          token.move(PlayerToken.Move.NONE);
+                                ^
+  50 errors
+
+* Try:
+> Check your code and dependencies to fix the compilation error(s)
+> Run with --scan to get full insights.
+
+BUILD FAILED in 669ms
