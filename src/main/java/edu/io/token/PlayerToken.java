@@ -1,10 +1,11 @@
 package edu.io.token;
 import edu.io.Board;
-import edu.io.token.Token;
+import edu.io.Player;
 
 public class PlayerToken extends Token {
 
     private final Board board;
+    private final Player player;
     private int col;
     private int row;
 
@@ -12,16 +13,20 @@ public class PlayerToken extends Token {
         NONE, UP, DOWN, LEFT, RIGHT
     }
 
-    public PlayerToken(Board board) {
+    public PlayerToken(Player player, Board board) {
         super(Label.PLAYER_TOKEN_LABEL);
         this.board = board;
+        this.player = player;
 
-        // pozycja startowa (0, 0)
-        this.col = 0;
-        this.row = 0;
+        //ustalenie pos początkowej
+        Board.Coords initialPos = board.getAvailableSquare();
+        this.col = initialPos.col();
+        this.row = initialPos.row();
 
-        // umieszczenie pionka na planszy
+        // Umieszczenie pionka na planszy
         this.board.placeToken(this.col, this.row, this);
+
+        player.assignToken(this);
     }
 
     public Board.Coords pos() {
@@ -51,8 +56,10 @@ public class PlayerToken extends Token {
             throw new IllegalArgumentException("Cannot move outside the board");
         }
 
+        Token targetToken = this.board.peekToken(newCol, newRow);
+        this.player.interactWithToken(targetToken);
         // czyszczenie pola
-        this.board.placeToken(this.row, this.col, new EmptyToken());
+        this.board.placeToken(this.col, this.row, new EmptyToken());
 
         // aktualizacja pozycji
         this.col = newCol;

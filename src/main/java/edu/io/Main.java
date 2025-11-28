@@ -1,23 +1,25 @@
 package edu.io;
 import java.util.Scanner;
-
-import edu.io.token.GoldToken;
-import edu.io.token.PlayerToken;
-import edu.io.token.Token;
-import edu.io.token.EmptyToken;
-import edu.io.Board;
+import edu.io.token.*;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Uruchomienie gry Gold Rush.");
-
+        System.out.println("Witajcie w Gold Rush!");
+        Game game = new Game();
         Board board = new Board();
-        PlayerToken playerToken = new PlayerToken(board); // Pionek tworzy się na (0, 0)
-        // testowe umieszczenie żetonu złota
-        Token gold = new GoldToken();
+        Player player = new Player();
+        game.join(player);
+        game.start();
+        PlayerToken playerToken = new PlayerToken(player, board);
+        double playerGold = player.gold();
 
+        // testowe umieszczenie żetonów
+        //zaimplementować w późniejszych iteracjach w klasie Game**
+        Token gold = new GoldToken();
+        Token pyrite = new PyriteToken();
         board.placeToken(2, 1, gold);
         board.placeToken(3, 5, gold);
+        board.placeToken(6, 6, pyrite);
 
         Scanner scanner = new Scanner(System.in);
         String input;
@@ -48,13 +50,14 @@ public class Main {
                     break;
                 case "Q": // status
                     Board.Coords pos = playerToken.pos();
-                    System.out.println("Aktualna pozycja: (" + pos.col() + ", " + pos.row() + ")");
-                    continue; //wraca do początku pętli bez ruchu
+                    System.out.println("Aktualna pozycja: (" + pos.col() + ", " + pos.row() + ")\n"+"Ilość złota: " + playerGold);
+                    continue; //wraca do początku bez ruchu
                 default:
                     System.out.println("Nieznany kierunek. Spróbuj ponownie.");
-                    continue; //wraca do początku pętli bez ruchu
+                    continue; //wraca do początku bez ruchu
             }
 
+            //sprawdzić
             if (moveDirection != PlayerToken.Move.NONE) {
                 try {
                     playerToken.move(moveDirection);
