@@ -4,28 +4,18 @@ import edu.io.token.*;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Witajcie w Gold Rush!");
+
         Game game = new Game();
-        Board board = new Board();
         Player player = new Player();
         game.join(player);
         game.start();
-        PlayerToken playerToken = new PlayerToken(player, board);
-        double playerGold = player.gold();
 
-        // testowe umieszczenie żetonów
-        //zaimplementować w późniejszych iteracjach w klasie Game**
-        Token gold = new GoldToken();
-        Token pyrite = new PyriteToken();
-        board.placeToken(2, 1, gold);
-        board.placeToken(3, 5, gold);
-        board.placeToken(6, 6, pyrite);
+        PlayerToken playerToken = player.token();
+        Board board = playerToken.getBoard();
 
         Scanner scanner = new Scanner(System.in);
         String input;
 
-        System.out.println("{ GOLD RUSH: STEROWANIE }");
-        System.out.println("W (góra), S (dół), A (lewo), D (prawo) lub Q (status).");
         while (true) {
 
             board.display();
@@ -50,11 +40,12 @@ public class Main {
                     break;
                 case "Q": // status
                     Board.Coords pos = playerToken.pos();
-                    System.out.println("Aktualna pozycja: (" + pos.col() + ", " + pos.row() + ")\n"+"Ilość złota: " + playerGold);
-                    continue; //wraca do początku bez ruchu
+                    double playerGold = player.gold();
+                    System.out.println("Aktualna pozycja: (" + pos.col() + ", " + pos.row() + ")\n"+"Zebrane złoto: " + playerGold);
+                    continue;
                 default:
                     System.out.println("Nieznany kierunek. Spróbuj ponownie.");
-                    continue; //wraca do początku bez ruchu
+                    continue;
             }
 
             //sprawdzić
@@ -68,6 +59,6 @@ public class Main {
             }
         }
 
-        // scanner.close();
+        //scanner.close();
     }
 }

@@ -6,11 +6,14 @@ public class PlayerToken extends Token {
 
     private final Board board;
     private final Player player;
-    private int col;
-    private int row;
+    private int col, row;
 
     public enum Move {
         NONE, UP, DOWN, LEFT, RIGHT
+    }
+
+    public Board getBoard() {
+        return this.board;
     }
 
     public PlayerToken(Player player, Board board) {

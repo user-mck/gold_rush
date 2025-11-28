@@ -1,5 +1,7 @@
 package edu.io;
-
+import edu.io.token.Token;
+import edu.io.token.GoldToken;
+import edu.io.token.PyriteToken;
 import edu.io.token.PlayerToken;
 
 public class Game {
@@ -11,20 +13,25 @@ public class Game {
         this.board = new Board();
     }
 
-    //wymagana do dołączenia gracza do gry
+    //dołączenie gracza
     public void join(Player player) {
         this.player = player;
-
-        //utworzenie pionka (player, board)
         PlayerToken token = new PlayerToken(player, this.board);
-
-        //przypisanie pionka do gracza
         player.assignToken(token);
     }
 
     public void start() {
-        //przyszłe iteracje:
-        // zaimplementować strukturę rozgrywki
-        // wyczyścić main
+        System.out.println("Witajcie w Gold Rush!");
+
+        Token gold = new GoldToken();
+        Token pyrite = new PyriteToken();
+
+        this.board.placeToken(2, 1, gold);
+        this.board.placeToken(3, 5, gold);
+        this.board.placeToken(6, 6, pyrite);
+
+        System.out.println("{ GOLD RUSH: STEROWANIE }");
+        System.out.println("W (góra), S (dół), A (lewo), D (prawo) lub Q (status).");
+
     }
 }
