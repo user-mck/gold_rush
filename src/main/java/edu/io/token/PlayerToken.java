@@ -21,12 +21,10 @@ public class PlayerToken extends Token {
         this.board = board;
         this.player = player;
 
-        //ustalenie pos początkowej
         Board.Coords initialPos = board.getAvailableSquare();
         this.col = initialPos.col();
         this.row = initialPos.row();
 
-        // Umieszczenie pionka na planszy
         this.board.placeToken(this.col, this.row, this);
 
         player.assignToken(this);
@@ -61,14 +59,11 @@ public class PlayerToken extends Token {
 
         Token targetToken = this.board.peekToken(newCol, newRow);
         this.player.interactWithToken(targetToken);
-        // czyszczenie pola
         this.board.placeToken(this.col, this.row, new EmptyToken());
 
-        // aktualizacja pozycji
         this.col = newCol;
         this.row = newRow;
 
-        // przemieszczenie pionka
         this.board.placeToken(this.col, this.row, this);
     }
 }

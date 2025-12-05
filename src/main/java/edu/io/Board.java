@@ -52,7 +52,6 @@ public class Board {
     }
 
     public Coords getAvailableSquare() {
-        // sprawdzenie, czy plansza jest pełna
         if (nextRow >= size) {
             throw new IllegalStateException("Board is full.");
         }
