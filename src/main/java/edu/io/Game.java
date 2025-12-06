@@ -1,9 +1,10 @@
 package edu.io;
 import java.util.Scanner;
-import edu.io.token.Token;
-import edu.io.token.GoldToken;
-import edu.io.token.PyriteToken;
-import edu.io.token.PlayerToken;
+import edu.io.player.NoTool;
+import edu.io.player.Player;
+import edu.io.player.Repairable;
+import edu.io.player.Tool;
+import edu.io.token.*;
 
 public class Game {
 
@@ -13,12 +14,56 @@ public class Game {
     public Game() {
         this.board = new Board();
     }
+    private void floorSeparator(){System.out.println("__________________________________");}
 
-    //dołączenie gracza
     public void join(Player player) {
         this.player = player;
         PlayerToken token = new PlayerToken(player, this.board);
         player.assignToken(token);
+    }
+
+
+    private void currentTool(){
+        Tool currentTool = player.shed().getTool();
+        String toolStatus;
+
+        if (currentTool instanceof NoTool) {
+            toolStatus = "Brak";
+        } else if (currentTool instanceof PickaxeToken pickaxe) {
+            if (pickaxe.isBroken()) {
+                toolStatus = "Zepsuty kilof! Wymaga naprawy lub usunięcia.";
+            } else {
+                int durability = pickaxe.durability();
+                String repairable = (currentTool instanceof Repairable) ? " (Naprawialny)" : "";
+                toolStatus = "Sprawny Kilof! (Pozostało użyć: " + durability + ")" + repairable;
+            }
+        } else {
+            // placeholder do innych narzędzi
+            toolStatus = "Posiadane narzędzie, nieokreślonego typu.";
+        }
+
+        System.out.println("Narzędzie: " + toolStatus);
+    }
+
+    private void playerStatus(){
+        PlayerToken playerToken = player.token();
+        Board.Coords pos = playerToken.pos();
+        double playerGold = player.gold();
+        System.out.println("Aktualna pozycja: (" + pos.col() + ", " + pos.row() + ")\n"+"Zebrane złoto: " + playerGold);
+
+    }
+
+    public void tokenPlacement(){
+        Token gold = new GoldToken();
+        Token pyrite = new PyriteToken();
+        Token pickaxe = new PickaxeToken();
+        Token anvil = new AnvilToken();
+
+        this.board.placeToken(2, 1, gold);
+        this.board.placeToken(3, 5, gold);
+        this.board.placeToken(6, 6, pyrite);
+        this.board.placeToken(0, 2, pickaxe);
+        this.board.placeToken(7, 8, anvil);
     }
 
     public void start() {
@@ -28,21 +73,15 @@ public class Game {
 
         PlayerToken playerToken = player.token();
         Board board = playerToken.getBoard();
-
-        System.out.println("Witajcie w Gold Rush!");
-
-        Token gold = new GoldToken();
-        Token pyrite = new PyriteToken();
-
-        this.board.placeToken(2, 1, gold);
-        this.board.placeToken(3, 5, gold);
-        this.board.placeToken(6, 6, pyrite);
+        int boardSize = this.board.size();
 
         System.out.println("{ GOLD RUSH: STEROWANIE }");
-        System.out.println("W (góra), S (dół), A (lewo), D (prawo) lub Q (status).");
+        System.out.println("W (góra), S (dół), A (lewo), D (prawo) lub Q/E (status).");
+        System.out.println("{ Wyświetlanie planszy: (Rozmiar: " + boardSize + "x" + boardSize + ") }");
+        tokenPlacement();
 
         while (true) {
-
+            floorSeparator();
             board.display();
 
             System.out.print("Podaj kierunek ruchu: ");
@@ -63,10 +102,11 @@ public class Game {
                 case "D":
                     moveDirection = PlayerToken.Move.RIGHT;
                     break;
-                case "Q": // status
-                    Board.Coords pos = playerToken.pos();
-                    double playerGold = player.gold();
-                    System.out.println("Aktualna pozycja: (" + pos.col() + ", " + pos.row() + ")\n"+"Zebrane złoto: " + playerGold);
+                case "Q": // pozycja i złoto
+                    playerStatus();
+                    continue;
+                case "E": // status narzędzia
+                    currentTool();
                     continue;
                 default:
                     System.out.println("Nieznany kierunek. Spróbuj ponownie.");
@@ -79,7 +119,7 @@ public class Game {
                     playerToken.move(moveDirection);
                     System.out.println("Ruch wykonany pomyślnie.");
                 } catch (IllegalArgumentException e) {
-                    System.err.println("BŁĄD: " + e.getMessage() + " Ruch nie został wykonany.");
+                    System.err.println("BŁĄD: " + e.getMessage() + ", Ruch nie został wykonany.");
                 }
             }
         }
