@@ -8,12 +8,10 @@ public class PickaxeToken extends Token implements Tool, Repairable {
     private final int initialDurability;
     private int currentDurability;
 
-    // Konstruktor domyślny
     public PickaxeToken() {
-        this(1.5, 3); // Domyślny gainFactor 1.5, durability 3 [12, 13]
+        this(1.5, 3);
     }
-
-    // Konstruktor z własnym gainFactorem
+    //gain factor osobno
     public PickaxeToken(double gainFactor) {
         this(gainFactor, 3);
     }
@@ -37,7 +35,6 @@ public class PickaxeToken extends Token implements Tool, Repairable {
         return currentDurability;
     }
 
-    // Zużycie kilofa
     public void use() {
         if (!isBroken()) {
             this.currentDurability--;
@@ -54,18 +51,15 @@ public class PickaxeToken extends Token implements Tool, Repairable {
         this.currentDurability = this.initialDurability;
     }
 
-    // Implementacja Fluent Interface (uproszczona)
-    // Zmienne stanu do obsługi łańcucha wywołań
     private boolean interactionSuccessful = false;
     private Token usedOnToken = null;
 
     @Override
     public Tool useWith(Token withToken) {
         this.usedOnToken = withToken;
-        // Tylko interakcja ze złotem jest "Working" [19]
         if (!isBroken() && withToken instanceof GoldToken) {
             interactionSuccessful = true;
-            use(); // Zużyj kilof, jeśli użyto go na złocie [5]
+            use();
         } else if (isBroken() && withToken instanceof GoldToken) {
             interactionSuccessful = false;
         } else {
@@ -76,7 +70,6 @@ public class PickaxeToken extends Token implements Tool, Repairable {
 
     @Override
     public Tool ifWorking(Runnable action) {
-        // Working oznacza udane użycie na złocie (przed sprawdzeniem, czy się nie zepsuł)
         if (!isBroken() && interactionSuccessful && usedOnToken instanceof GoldToken) {
             action.run();
         }
@@ -85,7 +78,6 @@ public class PickaxeToken extends Token implements Tool, Repairable {
 
     @Override
     public Tool ifBroken(Runnable action) {
-        // Broken oznacza, że jest już zepsuty (lub zużył się właśnie teraz) [20]
         if (isBroken() && usedOnToken instanceof GoldToken) {
             action.run();
         }
@@ -94,7 +86,6 @@ public class PickaxeToken extends Token implements Tool, Repairable {
 
     @Override
     public Tool ifIdle(Runnable action) {
-        // Idle oznacza, że użyto na czymś innym niż złoto [19]
         if (!(usedOnToken instanceof GoldToken)) {
             action.run();
         }

@@ -113,7 +113,6 @@ public class Game {
                     continue;
             }
 
-            //chck
             if (moveDirection != PlayerToken.Move.NONE) {
                 try {
                     playerToken.move(moveDirection);
