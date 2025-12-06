@@ -1,6 +1,6 @@
 package edu.io.token;
 import edu.io.Board;
-import edu.io.Player;
+import edu.io.player.Player;
 
 public class PlayerToken extends Token {
 
@@ -50,20 +50,19 @@ public class PlayerToken extends Token {
             default: break;
         }
 
-        // sprawdzanie granic
         if (newCol < 0 || newCol >= board.size ||
                 newRow < 0 || newRow >= board.size)
         {
             throw new IllegalArgumentException("Cannot move outside the board");
         }
 
-        Token targetToken = this.board.peekToken(newCol, newRow);
-        this.player.interactWithToken(targetToken);
-        this.board.placeToken(this.col, this.row, new EmptyToken());
+        var token = board.peekToken(newCol, newRow);
+        player.interactWithToken(token);
+        board.placeToken(col, row, new EmptyToken());
 
         this.col = newCol;
         this.row = newRow;
 
-        this.board.placeToken(this.col, this.row, this);
+        board.placeToken(col, row, this);
     }
 }

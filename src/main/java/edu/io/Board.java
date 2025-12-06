@@ -1,5 +1,4 @@
 package edu.io;
-
 import edu.io.token.EmptyToken;
 import edu.io.token.Token;
 
@@ -9,7 +8,6 @@ public class Board {
     private static final int DEFAULT_SIZE = 10;
     private int nextCol = 0;
     private int nextRow = 0;
-
     public final int size;
 
     public record Coords(int col, int row) {}
@@ -42,10 +40,10 @@ public class Board {
     }
 
     public void display() {
-        System.out.println("{ Wyświetlanie planszy: (Rozmiar: " + DEFAULT_SIZE + "x" + DEFAULT_SIZE + ") }");
         for (int c = 0; c < DEFAULT_SIZE; c++) {
             for (int r = 0; r < DEFAULT_SIZE; r++) {
-                System.out.print("[" + grid[c][r].label() + "]");
+                String label = grid[c][r].label();
+                System.out.printf("%-3s", label);
             }
             System.out.println();
         }
@@ -56,10 +54,8 @@ public class Board {
             throw new IllegalStateException("Board is full.");
         }
 
-        // zapisanie aktualnych współrzędnych
         Coords c = new Coords(nextCol, nextRow);
 
-        // aktualizacja wskaźników do następnego pola
         nextCol++;
         if (nextCol >= size) {
             nextCol = 0;
