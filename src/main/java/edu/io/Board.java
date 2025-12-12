@@ -23,8 +23,11 @@ public class Board {
         return this.size;
     }
 
-    public void placeToken(int col, int row, Token t) {
-        this.grid[row][col] = t;
+    public void placeToken(int col, int row, Token token) {
+        if (token == null) {
+            throw new NullPointerException();
+        }
+        this.grid[row][col] = token;
     }
 
     public Token peekToken(int col, int row) {

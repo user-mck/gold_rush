@@ -1,9 +1,7 @@
 package edu.io;
 import java.util.Scanner;
-import edu.io.player.NoTool;
-import edu.io.player.Player;
-import edu.io.player.Repairable;
-import edu.io.player.Tool;
+
+import edu.io.player.*;
 import edu.io.token.*;
 
 public class Game {
@@ -21,7 +19,6 @@ public class Game {
         PlayerToken token = new PlayerToken(player, this.board);
         player.assignToken(token);
     }
-
 
     private void currentTool(){
         Tool currentTool = player.shed().getTool();
@@ -49,21 +46,28 @@ public class Game {
         PlayerToken playerToken = player.token();
         Board.Coords pos = playerToken.pos();
         double playerGold = player.gold();
-        System.out.println("Aktualna pozycja: (" + pos.col() + ", " + pos.row() + ")\n"+"Zebrane złoto: " + playerGold);
-
+        int playerHydration = player.vitals.hydration();
+        System.out.println("Aktualna pozycja: (" + pos.col() + ", " + pos.row() + ")");
+        System.out.println("Nawodnienie Gracza: " + playerHydration);
+        System.out.println("Zebrane złoto: " + playerGold);
     }
 
     public void tokenPlacement(){
+        //nie powinienem tego rozdzielać, ale jest wygodniej
         Token gold = new GoldToken();
         Token pyrite = new PyriteToken();
         Token pickaxe = new PickaxeToken();
         Token anvil = new AnvilToken();
+        Token water = new WaterToken();
 
         this.board.placeToken(2, 1, gold);
         this.board.placeToken(3, 5, gold);
         this.board.placeToken(6, 6, pyrite);
         this.board.placeToken(0, 2, pickaxe);
         this.board.placeToken(7, 8, anvil);
+        this.board.placeToken(3, 2, water);
+        this.board.placeToken(3, 2, water);
+        this.board.placeToken(9, 4, water);
     }
 
     public void start() {
