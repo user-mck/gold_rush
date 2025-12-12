@@ -1,6 +1,5 @@
 package edu.io;
 import java.util.Scanner;
-
 import edu.io.player.*;
 import edu.io.token.*;
 
@@ -65,7 +64,6 @@ public class Game {
         this.board.placeToken(6, 6, pyrite);
         this.board.placeToken(0, 2, pickaxe);
         this.board.placeToken(7, 8, anvil);
-        this.board.placeToken(3, 2, water);
         this.board.placeToken(3, 2, water);
         this.board.placeToken(9, 4, water);
     }
