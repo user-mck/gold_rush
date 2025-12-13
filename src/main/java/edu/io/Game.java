@@ -6,7 +6,7 @@ import edu.io.token.*;
 public class Game {
 
     private final Board board;
-    private Player player; //na razie jeden gracz
+    private Player player;
 
     public Game() {
         this.board = new Board();
@@ -52,7 +52,6 @@ public class Game {
     }
 
     public void tokenPlacement(){
-        //nie powinienem tego rozdzielać, ale jest wygodniej
         Token gold = new GoldToken();
         Token pyrite = new PyriteToken();
         Token pickaxe = new PickaxeToken();

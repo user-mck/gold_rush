@@ -3,7 +3,6 @@ import edu.io.Board;
 import edu.io.player.Player;
 
 public class PlayerToken extends Token {
-
     private final Board board;
     private final Player player;
     private int col, row;

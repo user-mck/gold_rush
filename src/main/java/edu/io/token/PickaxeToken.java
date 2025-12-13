@@ -11,12 +11,11 @@ public class PickaxeToken extends Token implements Tool, Repairable {
     public PickaxeToken() {
         this(1.5, 3);
     }
-    //gain factor osobno
+
     public PickaxeToken(double gainFactor) {
         this(gainFactor, 3);
     }
 
-    // Pełny konstruktor
     public PickaxeToken(double gainFactor, int durability) {
         super(Label.PICKAXE_TOKEN_LABEL);
         if (gainFactor <= 0 || durability <= 0) {
@@ -30,7 +29,6 @@ public class PickaxeToken extends Token implements Tool, Repairable {
     public double gainFactor() {
         return initialGainFactor;
     }
-
     public int durability() {
         return currentDurability;
     }

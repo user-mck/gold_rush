@@ -1,11 +1,10 @@
 package edu.io.player;
 
 public class Vitals {
-    private int hydration = 100;
+    private int hydration = 5;
     private Runnable onDeathCallback;
 
     public Vitals() {
-        // Init callbacka pustą lambdą
         this.onDeathCallback = () -> {};
     }
 

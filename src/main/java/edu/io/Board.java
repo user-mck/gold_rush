@@ -3,7 +3,6 @@ import edu.io.token.EmptyToken;
 import edu.io.token.Token;
 
 public class Board {
-
     private final Token[][] grid;
     private static final int DEFAULT_SIZE = 10;
     private int nextCol = 0;
