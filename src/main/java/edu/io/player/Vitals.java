@@ -1,7 +1,7 @@
 package edu.io.player;
 
 public class Vitals {
-    private int hydration = 5;
+    private int hydration = 100;
     private Runnable onDeathCallback;
 
     public Vitals() {
